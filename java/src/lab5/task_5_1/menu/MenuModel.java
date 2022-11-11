@@ -1,13 +1,13 @@
 package lab5.task_5_1.menu;
 
-import lab5.task_5_1.FileReader;
-import lab5.task_5_1.LineFinder;
+import lab5.task_5_1.FileDataReader;
+import lab5.task_5_1.StringProcessor;
 
 public class MenuModel {
-	private FileReader fr;
-	private LineFinder lf;
+	private FileDataReader fr;
+	private StringProcessor sp;
 	
-	public void addControllers(FileReader fr, LineFinder lf) {
+	public void addControllers(FileDataReader fr, StringProcessor sp) {
 		
 	}
 	

@@ -1,7 +1,7 @@
 package lab5.task_5_1.menu;
 
-import lab5.task_5_1.FileReader;
-import lab5.task_5_1.LineFinder;
+import lab5.task_5_1.FileDataReader;
+import lab5.task_5_1.StringProcessor;
 
 public class MenuCountroller {
 	private MenuModel model;
@@ -11,7 +11,7 @@ public class MenuCountroller {
 		
 	}
 	
-	public void launch(FileReader fr, LineFinder lf) {
+	public void launch(FileDataReader fr, StringProcessor sp) {
 		
 	}
 }

@@ -3,7 +3,7 @@ package lab5.task_5_1;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class LineFinder {
+public class StringProcessor {
 	public String mostWordsLine(String str) {
 		ArrayList<String> lines = new ArrayList<String>(Arrays.asList(str.split("\n")));
 		String longest = lines.remove(0);
