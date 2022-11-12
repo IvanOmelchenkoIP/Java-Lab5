@@ -1,7 +1,7 @@
 package lab5.task_5_1.menu;
 
-import lab5.task_5_1.FileDataReader;
-import lab5.task_5_1.StringProcessor;
+import lab5.task_5_1.freader.FileDataReader;
+import lab5.task_5_1.strprocessor.StringProcessorModel;
 
 class MenuOptions {
 	public final static String MENU_READ_FILE = "1";
@@ -10,9 +10,9 @@ class MenuOptions {
 
 public class MenuModel {
 	private FileDataReader fr;
-	private StringProcessor sp;
+	private StringProcessorModel sp;
 	
-	public void addControllers(FileDataReader fr, StringProcessor sp) {
+	public void addControllers(FileDataReader fr, StringProcessorModel sp) {
 		this.fr = fr;
 		this.sp = sp;
 	}

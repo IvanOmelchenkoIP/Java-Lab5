@@ -1,4 +1,4 @@
-package lab5.task_5_1;
+package lab5.task_5_1.freader;
 
 import java.io.File;
 

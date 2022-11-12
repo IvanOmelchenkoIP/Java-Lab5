@@ -1,9 +1,10 @@
-package lab5.task_5_1;
+package lab5.task_5_1.strprocessor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class StringProcessor {
+public class StringProcessorModel {
+	
 	public String mostWordsLine(String str) {
 		ArrayList<String> lines = new ArrayList<String>(Arrays.asList(str.split("\n")));
 		String longest = lines.remove(0);
