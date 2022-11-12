@@ -5,7 +5,7 @@ public class StringProcessorController {
 	private StringProcessorModel model;
 	private StringProcessorView view;
 	
-	StringProcessorController(StringProcessorModel model, StringProcessorView view) {
+	public StringProcessorController(StringProcessorModel model, StringProcessorView view) {
 		this.model = model;
 		this.view = view;
 	}

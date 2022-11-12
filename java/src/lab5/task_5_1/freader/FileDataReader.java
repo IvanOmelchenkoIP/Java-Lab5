@@ -1,19 +1,21 @@
 package lab5.task_5_1.freader;
 
+import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.nio.charset.StandardCharsets;
 
 public class FileDataReader {
 
 	public String read(String filepath) throws IOException {
-		ObjectInputStream os = null;
+		DataInputStream stream = null;
 		try {
-			os = new ObjectInputStream(new FileInputStream(filepath));
-			return os.readUTF();
+			stream = new DataInputStream(new FileInputStream(filepath));
+			String contents = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
+			return contents;
 		} finally {
-			if (os != null) {
-				os.close();
+			if (stream != null) {
+				stream.close();
 			}
 		}
 	}
