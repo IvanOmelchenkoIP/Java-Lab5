@@ -1,6 +1,6 @@
 package lab5.task_5_1.menu;
 
-import lab5.task_5_1.freader.FileDataReader;
+import lab5.task_5_1.fs.FileSystem;
 import lab5.task_5_1.strprocessor.StringProcessorModel;
 
 public class MenuCountroller {
@@ -13,7 +13,7 @@ public class MenuCountroller {
 		this.view = view;
 	}
 	
-	public void launch(FileDataReader fr, StringProcessorModel sp) {
+	public void launch(FileSystem fr, StringProcessorModel sp) {
 		model.addControllers(fr, sp);
 
 	}

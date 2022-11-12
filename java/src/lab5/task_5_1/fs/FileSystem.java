@@ -1,11 +1,11 @@
-package lab5.task_5_1.freader;
+package lab5.task_5_1.fs;
 
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-public class FileDataReader {
+public class FileSystem {
 
 	public String read(String filepath) throws IOException {
 		DataInputStream stream = null;
