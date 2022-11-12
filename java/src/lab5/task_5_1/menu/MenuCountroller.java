@@ -8,10 +8,12 @@ public class MenuCountroller {
 	private MenuView view;
 	
 	public MenuCountroller(MenuModel model, MenuView view) {
-		
+		this.model = model;
+		this.view = view;
 	}
 	
 	public void launch(FileDataReader fr, StringProcessor sp) {
+		model.addControllers(fr, sp);
 		
 	}
 }
