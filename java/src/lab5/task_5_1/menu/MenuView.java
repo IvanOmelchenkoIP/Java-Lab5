@@ -1,14 +1,19 @@
 package lab5.task_5_1.menu;
 
 public class MenuView {
-	public static String MENU = "1) find longest line in file\n2) exit";
-	public static String INPUT_FIELD = "Enter a corresponding number to continue: ";
 	
-	public static String INVALID_COMMAND = "Error! Invalid command!";
+	public final static String MENU = "1) find longest line in file\n2) exit\n";
+	public final static String MENU_INPUT_FIELD = "Enter a corresponding number to continue: ";
 	
-	public static String EXIT = "Exiting the program...";
+	public final static String FILE_INPUT_FIELD = "Enter a name of a file you want to process: ";
 	
+	public final static String COMMAND_ERROR = "Error! Invalid command!\n";
+	
+	public static final String FILE_ERROR = "Error! Error while attemptiong to read file!\n";
+	
+	public final static String EXIT = "Exiting the program...\n";
+
 	public void showMessage(String msg) {
-		System.out.println(msg);
+		System.out.print(msg);
 	}
 }
