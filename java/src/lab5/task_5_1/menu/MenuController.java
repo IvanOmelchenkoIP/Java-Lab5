@@ -3,9 +3,10 @@ package lab5.task_5_1.menu;
 import java.io.IOException;
 
 import lab5.task_5_1.fs.FileSystem;
+import lab5.task_5_1.scanner.InputScanner;
 import lab5.task_5_1.strprocessor.StringProcessorController;
 
-public class MenuCountroller {
+public class MenuController {
 
 	private boolean runFlag = false;
 
@@ -14,7 +15,7 @@ public class MenuCountroller {
 
 	private final InputScanner scanner;
 
-	public MenuCountroller(MenuModel model, MenuView view, InputScanner scanner) {
+	public MenuController(MenuModel model, MenuView view, InputScanner scanner) {
 		this.model = model;
 		this.view = view;
 		this.scanner = scanner;
@@ -26,11 +27,11 @@ public class MenuCountroller {
 		while (runFlag) {
 			view.showMessage(MenuView.MENU);
 			view.showMessage(MenuView.MENU_INPUT_FIELD);
-			String input = scanner.scan();
+			String input = scanner.scanInput();
 			boolean readFile = processCommand(input);
 			if (readFile) {
 				view.showMessage(MenuView.FILE_INPUT_FIELD);
-				String filepath = scanner.scan();
+				String filepath = scanner.scanInput();
 				processFile(filepath);
 			}
 		}
