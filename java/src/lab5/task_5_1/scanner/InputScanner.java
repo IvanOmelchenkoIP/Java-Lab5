@@ -4,10 +4,17 @@ import java.util.Scanner;
 
 public class InputScanner {
 	
-	public static String scanInput() {
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
+	private Scanner scanner;
+	
+	public InputScanner() {
+		scanner = new Scanner(System.in);
+	}
+	
+	public String scanInput() {
+		return scanner.nextLine();
+	}
+	
+	public void close() {
 		scanner.close();
-		return input;
 	}
 }

@@ -13,15 +13,12 @@ public class MenuController {
 	private final MenuModel model;
 	private final MenuView view;
 
-	private final InputScanner scanner;
-
-	public MenuController(MenuModel model, MenuView view, InputScanner scanner) {
+	public MenuController(MenuModel model, MenuView view) {
 		this.model = model;
 		this.view = view;
-		this.scanner = scanner;
 	}
 
-	public void launch(FileSystem fs, StringProcessorController sp) {
+	public void launch(InputScanner scanner, FileSystem fs, StringProcessorController sp) {
 		model.addControllers(fs, sp);
 		runFlag = true;
 		while (runFlag) {
@@ -35,6 +32,7 @@ public class MenuController {
 				processFile(filepath);
 			}
 		}
+		scanner.close();
 	}
 
 	private boolean processCommand(String input) {
@@ -60,7 +58,7 @@ public class MenuController {
 			model.processFile(filepath);
 		} catch (IOException exception) {
 			view.showMessage(MenuView.FILE_ERROR);
-			System.out.println(exception);
+			System.out.println(exception + "\n");
 		}
 	}
 }

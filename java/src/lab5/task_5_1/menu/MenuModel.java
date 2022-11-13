@@ -33,7 +33,7 @@ public class MenuModel {
 	public void processFile(String filepath) throws IOException {
 		String data = null;
 		try {
-			data = fs.read("./src/lab5/task_5_1/test_files/test.txt");
+			data = fs.read(filepath);
 		} catch (IOException exception) {
 			throw exception;
 		}

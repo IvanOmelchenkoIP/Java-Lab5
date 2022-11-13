@@ -7,11 +7,11 @@ public class MenuView {
 	
 	public final static String FILE_INPUT_FIELD = "Enter a name of a file you want to process: ";
 	
-	public final static String COMMAND_ERROR = "Error! Invalid command!\n";
+	public final static String COMMAND_ERROR = "Error! Invalid command!\n\n";
 	
 	public static final String FILE_ERROR = "Error! Error while attemptiong to read file!\n";
 	
-	public final static String EXIT = "Exiting the program...\n";
+	public final static String EXIT = "Exiting the program...\n\n";
 
 	public void showMessage(String msg) {
 		System.out.print(msg);
