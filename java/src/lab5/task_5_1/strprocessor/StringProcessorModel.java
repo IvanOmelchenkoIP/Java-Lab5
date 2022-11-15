@@ -5,6 +5,10 @@ import java.util.Arrays;
 
 public class StringProcessorModel {
 
+	public boolean lineEmpty(String line) {
+		return line.replaceAll("\\s+", "").length() == 0;
+	}
+
 	public String mostWordsLine(String str) {
 		ArrayList<String> lines = new ArrayList<String>(Arrays.asList(str.split("\n")));
 		String longest = lines.remove(0);

@@ -12,6 +12,7 @@ public class FileSystem {
 		try {
 			stream = new DataInputStream(new FileInputStream(filepath));
 			String contents = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
+
 			return contents;
 		} finally {
 			if (stream != null) {
