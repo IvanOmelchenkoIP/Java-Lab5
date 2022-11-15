@@ -21,6 +21,6 @@ public class StringProcessorModel {
 	}
 
 	private int wordCount(String str) {
-		return str.split(" ").length;
+		return str.split("\\s+").length;
 	}
 }
