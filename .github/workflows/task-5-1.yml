@@ -21,12 +21,12 @@ jobs:
 
       - name: Build
         working-directory: ./java/src
-        run: javac ./lab5/5_1/fs/FileProcessSystem.java ./lab5/5_1/strprocessor/StringProcessorView.java ./lab5/5_1/strprocessor/StringProcessorModel.java ./lab5/5_1/strprocessor/StringProcessorController.java ./lab5/5_1/scanner/InputScanner.java ./lab5/5_1/menu/MenuStates.java ./lab5/5_1/menu/MenuView.java ./lab5/5_1/menu/MenuModel.java ./lab5/5_1/menu/MenuController.java ./lab5/5_1/Main.java
+        run: javac ./lab5/task_5_1/fs/FileProcessSystem.java ./lab5/task_5_1/strprocessor/StringProcessorView.java ./lab5/task_5_1/strprocessor/StringProcessorModel.java ./lab5/task_5_1/strprocessor/StringProcessorController.java ./lab5/task_5_1/scanner/InputScanner.java ./lab5/task_5_1/menu/MenuStates.java ./lab5/task_5_1/menu/MenuView.java ./lab5/task_5_1/menu/MenuModel.java ./lab5/task_5_1/menu/MenuController.java ./lab5/task_5_1/Main.java
 
       - name: Test
         working-directory: ./java
         run: |
-          javac -cp "./junit/junit-platform-console-standalone-1.9.0.jar"  ./lab5/5_1/strprocessor/StringProcessorModel.java ./lab5/5_1/tests/StringProcessorModelTests.java
-          java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.5_1.tests.StringProcessorModelTests
-          javac -cp "./jnunit/junit-platform-console-standalone-1.9.0.jar" ./lab5/5_1/fs/FileProcessSystem.java ./lab5/5_1/tests/FileSystemTests.java
-          java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.5_1tests.FileSystemTests
+          javac -cp "./junit/junit-platform-console-standalone-1.9.0.jar"  ./lab5/task_5_1/strprocessor/StringProcessorModel.java ./lab5/task_5_1/tests/StringProcessorModelTests.java
+          java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.task_5_1.tests.StringProcessorModelTests
+          javac -cp "./jnunit/junit-platform-console-standalone-1.9.0.jar" ./lab5/task_5_1/fs/FileProcessSystem.java ./lab5/task_5_1/tests/FileSystemTests.java
+          java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.task_5_1tests.FileSystemTests
