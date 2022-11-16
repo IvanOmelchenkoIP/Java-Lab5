@@ -26,7 +26,7 @@ jobs:
       - name: Test
         working-directory: ./java
         run: |
-          javac -cp "./junit/junit-platform-console-standalone-1.9.0.jar"  ./lab5/task_5_1/strprocessor/StringProcessorModel.java ./lab5/task_5_1/tests/StringProcessorModelTests.java
+          javac -cp "./junit/junit-platform-console-standalone-1.9.0.jar"  ./src/lab5/task_5_1/strprocessor/StringProcessorModel.java ./src/lab5/task_5_1/tests/StringProcessorModelTests.java
           java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.task_5_1.tests.StringProcessorModelTests
-          javac -cp "./jnunit/junit-platform-console-standalone-1.9.0.jar" ./lab5/task_5_1/fs/FileProcessSystem.java ./lab5/task_5_1/tests/FileSystemTests.java
+          javac -cp "./jnunit/junit-platform-console-standalone-1.9.0.jar" ./src/lab5/task_5_1/fs/FileProcessSystem.java ./src/lab5/task_5_1/tests/FileSystemTests.java
           java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.task_5_1tests.FileSystemTests
