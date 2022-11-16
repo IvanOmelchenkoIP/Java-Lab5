@@ -51,15 +51,12 @@ class FileSystemTests {
 
 	@Test
 	void TestReadFileMultipleLineFile() {
-		String expected = "this is a line\r\n" 
-				+ "this line has more words\r\n" 
-				+ "this line has same words\r\n"
-				+ "smallest line";
+		String expected = "this is a line\nthis line has more words\nthis line has same words\nsmallest line";
 
 		FileProcessSystem fs = new FileProcessSystem();
 		try {
 			String value = fs.read("./test_files/5_1/multiple-line.txt");
-			assertEquals(expected, value);
+			assertEquals(expected, value.replaceAll("\r", ""));
 		} catch (Exception exception) {
 			fail("Should return string!");
 		}
