@@ -2,7 +2,7 @@ package lab5.task_5_1.menu;
 
 import java.io.IOException;
 
-import lab5.task_5_1.fs.FileSystem;
+import lab5.task_5_1.fs.FileProcessSystem;
 import lab5.task_5_1.scanner.InputScanner;
 import lab5.task_5_1.strprocessor.StringProcessorController;
 
@@ -18,7 +18,7 @@ public class MenuController {
 		this.view = view;
 	}
 
-	public void launch(InputScanner scanner, FileSystem fs, StringProcessorController sp) {
+	public void launch(InputScanner scanner, FileProcessSystem fs, StringProcessorController sp) {
 		model.addControllers(fs, sp);
 		runFlag = true;
 		while (runFlag) {

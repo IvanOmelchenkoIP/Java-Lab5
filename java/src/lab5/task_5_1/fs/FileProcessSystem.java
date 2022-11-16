@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
-public class FileSystem {
+public class FileProcessSystem {
 
 	public String read(String filepath) throws IOException {
 		DataInputStream stream = null;

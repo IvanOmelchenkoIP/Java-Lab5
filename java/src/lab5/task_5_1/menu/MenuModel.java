@@ -2,7 +2,7 @@ package lab5.task_5_1.menu;
 
 import java.io.IOException;
 
-import lab5.task_5_1.fs.FileSystem;
+import lab5.task_5_1.fs.FileProcessSystem;
 import lab5.task_5_1.strprocessor.StringProcessorController;
 
 class MenuOptions {
@@ -12,10 +12,10 @@ class MenuOptions {
 
 public class MenuModel {
 
-	private FileSystem fs;
+	private FileProcessSystem fs;
 	private StringProcessorController sp;
 
-	public void addControllers(FileSystem fs, StringProcessorController sp) {
+	public void addControllers(FileProcessSystem fs, StringProcessorController sp) {
 		this.fs = fs;
 		this.sp = sp;
 	}

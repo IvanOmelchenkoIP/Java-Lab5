@@ -1,6 +1,6 @@
 package lab5.task_5_1;
 
-import lab5.task_5_1.fs.FileSystem;
+import lab5.task_5_1.fs.FileProcessSystem;
 import lab5.task_5_1.menu.*;
 import lab5.task_5_1.scanner.InputScanner;
 import lab5.task_5_1.strprocessor.*;
@@ -19,7 +19,7 @@ public class Main {
 		MenuController menu = new MenuController(model, view);
 
 		InputScanner scanner = new InputScanner();
-		FileSystem fs = new FileSystem();
+		FileProcessSystem fs = new FileProcessSystem();
 		StringProcessorModel sm = new StringProcessorModel();
 		StringProcessorView sv = new StringProcessorView();
 		StringProcessorController sp = new StringProcessorController(sm, sv);
