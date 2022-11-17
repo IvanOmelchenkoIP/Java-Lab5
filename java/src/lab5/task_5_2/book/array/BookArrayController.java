@@ -19,6 +19,18 @@ public class BookArrayController {
 		ArrayList<Book> bookList = model.getBooks();
 		view.printInitMessage(bookList);
 	}
+	
+	public ArrayList<Book> getFileStorage() {
+		return model.getFileStorage();
+	}
+	
+	public void setFileStorage(ArrayList<Book> storage) {
+		model.setFileStorage(storage);
+	}
+	
+	public void resetFileStorage() {
+		model.resetFileStorage();
+	}
 
 	public void getBooksOfAuthor(String author) {
 		ArrayList<Book> selected = model.getBooksOfAuthor(author);

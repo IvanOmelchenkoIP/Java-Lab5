@@ -27,13 +27,27 @@ public class MenuController {
 			view.printMenuMessage(MenuView.INPUT_FIELD);
 
 			String input = scanner.scanInput();
-			boolean[] ret = model.processInput(input);
-			runFlag = ret[0];
-			if (ret[1]) {
-				view.printMenuMessage(MenuView.INVALID_COMMAND);
-			}
+			int command = model.processInput(input);
+			processCommand(command, scanner);
 		}
 		view.printMenuMessage(MenuView.EXIT);
 		scanner.close();
+	}
+	
+	public void processCommand(int command, InputScanner scanner) {
+		switch(command) {
+		case MenuStates.STATUS_EXIT -> runFlag = false;
+		case MenuStates.STATUS_INCORRECT_COMMAND -> view.printMenuMessage(MenuView.INVALID_COMMAND);
+		case MenuStates.STATUS_WRITE_FILE -> writeFile(scanner);
+		case MenuStates.STATUS_READ_FILE -> readFile(scanner);
+		}
+	}
+	
+	private void writeFile(InputScanner scanner) {
+		
+	}
+	
+	private void readFile(InputScanner scanner) {
+		
 	}
 }
