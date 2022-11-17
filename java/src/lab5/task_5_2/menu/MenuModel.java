@@ -2,6 +2,7 @@ package lab5.task_5_2.menu;
 
 import lab5.task_5_2.book.array.BookArrayController;
 import lab5.task_5_2.book.datagenerator.ProcessingDataGenerator;
+import lab5.task_5_2.fs.FileObjectSystem;
 
 class MenuOptions {
 
@@ -18,9 +19,11 @@ class MenuOptions {
 public class MenuModel {
 
 	BookArrayController books;
+	FileObjectSystem fs;
 
-	public void setControllers(BookArrayController books) {
+	public void setControllers(BookArrayController books, FileObjectSystem fs) {
 		this.books = books;
+		this.fs = fs;
 	}
 
 	public int processInput(String command) {
@@ -61,5 +64,13 @@ public class MenuModel {
 	
 	private void resetFileStorage() {
 		books.resetFileStorage();
+	}
+	
+	private void writeFile(String filepath) {
+		
+	}
+	
+	private void readFile(String filepath) {
+		
 	}
 }

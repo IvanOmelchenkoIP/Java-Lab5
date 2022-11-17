@@ -1,6 +1,7 @@
 package lab5.task_5_2.menu;
 
 import lab5.task_5_2.book.array.BookArrayController;
+import lab5.task_5_2.fs.FileObjectSystem;
 import lab5.task_5_2.scanner.InputScanner;
 
 public class MenuController {
@@ -15,11 +16,11 @@ public class MenuController {
 		this.view = view;
 	}
 
-	public void launch(BookArrayController books, InputScanner scanner) {
+	public void launch(BookArrayController books, FileObjectSystem fs, InputScanner scanner) {
 		runFlag = true;
 		
 		books.initBookArray();
-		model.setControllers(books);
+		model.setControllers(books, fs);
 
 		while (runFlag) {
 			view.printMenuMessage(MenuView.NEW_LINE);
