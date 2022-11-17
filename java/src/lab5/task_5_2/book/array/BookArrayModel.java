@@ -10,9 +10,11 @@ import lab5.task_5_2.book.comparator.BookPublisherComparator;
 public class BookArrayModel {
 
 	private ArrayList<Book> books;
-
+	private ArrayList<Book> fileStorage;
+ 
 	public BookArrayModel() {
 		books = new ArrayList<Book>();
+		fileStorage = books;
 	}
 
 	public void addBook(Book book) {
@@ -22,6 +24,18 @@ public class BookArrayModel {
 	public ArrayList<Book> getBooks() {
 		return books;
 	}
+	
+	public ArrayList<Book> getFileStorage() {
+		return fileStorage;
+	}
+	
+	public void resetFileStorage() {
+		fileStorage = books;
+	}
+	
+	public void setFileStorage(ArrayList<Book> storage) {
+		fileStorage = storage;
+	}
 
 	public ArrayList<Book> getBooksOfAuthor(String author) {
 		ArrayList<Book> selected = new ArrayList<Book>();
@@ -30,6 +44,7 @@ public class BookArrayModel {
 				selected.add(book);
 			}
 		}
+		setFileStorage(selected);
 		return selected;
 	}
 
@@ -40,6 +55,7 @@ public class BookArrayModel {
 				selected.add(book);
 			}
 		}
+		setFileStorage(selected);
 		return selected;
 	}
 
@@ -50,6 +66,7 @@ public class BookArrayModel {
 				selected.add(book);
 			}
 		}
+		setFileStorage(selected);
 		return selected;
 	}
 
@@ -57,6 +74,7 @@ public class BookArrayModel {
 		Comparator<Book> comparator = new BookPublisherComparator();
 		ArrayList<Book> sorted = new ArrayList<Book>(books);
 		Collections.sort(sorted, comparator);
+		setFileStorage(sorted);
 		return sorted;
 	}
 }
