@@ -66,11 +66,13 @@ public class MenuModel {
 		books.resetFileStorage();
 	}
 	
-	private void writeFile(String filepath) {
+	public void writeFile(String filepath) {
+		Object storage = books.getFileStorage();
 		
 	}
 	
-	private void readFile(String filepath) {
-		
+	public void readFile(String filepath) {
+		//fs.read(filepath);
+		books.setFileStorage(null);
 	}
 }
