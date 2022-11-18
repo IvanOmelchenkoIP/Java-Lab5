@@ -14,7 +14,8 @@ public class Main {
 		
 		BookArrayModel booksModel = new BookArrayModel();
 		BookArrayView booksView = new BookArrayView();
-		BookArrayController books = new BookArrayController(booksModel, booksView);
+		FileBookStorage fileStorage = new FileBookStorage();
+		BookArrayController books = new BookArrayController(booksModel, booksView, fileStorage);
 		FileObjectSystem fs = new FileObjectSystem();
 		InputScanner scanner = new InputScanner();
 		
