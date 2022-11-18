@@ -10,6 +10,8 @@ public class MenuView {
 	public final static String INPUT_FIELD = "Enter a number corresponding menu item. Your input > ";
 
 	public final static String INPUT_FILE_FIELD = "Enter a file name. Yout input > ";
+	
+	public final static String FILE_WRITE_SUCCESS = "Your file has been written successfully with current data...\n";
 
 	public final static String FILE_WRITE_ERROR = "An error occured while writing your file!\n";
 	public final static String FILE_READ_ERROR = "An error occured while reading your file!\n";

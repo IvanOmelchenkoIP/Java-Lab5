@@ -49,6 +49,7 @@ public class MenuController {
 		String filepath = scanner.scanInput();
 		try {
 			model.writeFile(filepath);
+			view.printMenuMessage(MenuView.FILE_WRITE_SUCCESS);
 		} catch (Exception exception) {
 			view.printException(MenuView.FILE_WRITE_ERROR, exception);
 		}
