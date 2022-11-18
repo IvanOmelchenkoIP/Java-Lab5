@@ -1,6 +1,5 @@
 package lab5.task_5_2.fs;
 
-import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
