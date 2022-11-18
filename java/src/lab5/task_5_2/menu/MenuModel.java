@@ -81,6 +81,8 @@ public class MenuModel {
 	public void readFile(String filepath) throws Exception {
 		try {
 			Object storage = fs.read(filepath);
+			System.out.println(storage.getClass());
+			System.out.println(storage);
 		    books.setFileStorage(storage);
 		} catch (Exception exception) {
 			throw exception;

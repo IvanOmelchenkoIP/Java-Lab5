@@ -1,6 +1,7 @@
 package lab5.task_5_2.book.array;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import lab5.task_5_2.book.Book;
 import lab5.task_5_2.book.initer.BookArrayIniter;
@@ -22,17 +23,21 @@ public class BookArrayController {
 		storage.setStorage(bookList);
 		view.printInitMessage(bookList);
 	}
-	
+
 	public ArrayList<Book> getFileStorage() {
 		return storage.getStorage();
 	}
-	
+
 	public void setFileStorage(Object data) {
-		//ArrayList<Book> list = new ArrayList<Book>();
-		//list.add(...data);
-		//storage.setStorage(data);
+		if (data.getClass() != ArrayList.class || ((ArrayList<Book>) data).get(0).getClass() != Book.class) {
+			view.printOperationMessage(data, BookArrayView.ERR_READ_FROM_FILE_FORMAT);
+		} else {
+			ArrayList<Book> list = (ArrayList<Book>) data;
+			storage.setStorage(list);
+			view.printOperationMessage(data, BookArrayView.SUCCESS_READ_FROM_FILE);
+		}
 	}
-	
+
 	public void resetFileStorage() {
 		storage.setStorage(model.getBooks());
 	}

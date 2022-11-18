@@ -14,7 +14,7 @@ public class MenuView {
 	public final static String FILE_WRITE_ERROR = "An error occured while writing your file!\n";
 	public final static String FILE_READ_ERROR = "An error occured while reading your file!\n";
 
-	public final static String INVALID_COMMAND = "The command you chose is invalid! Please select a valid command...";
+	public final static String INVALID_COMMAND = "The command you chose is invalid! Please select a valid command...\n";
 
 	public final static String EXIT = "Exiting the program...\n";
 
