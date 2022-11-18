@@ -1,0 +1,30 @@
+name: Build and Test Task 2
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setupup Java JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Build
+        working-directory: ./java/src
+        run: javac ./lab5/task_5_2/fs/FileObjectSystem.java ./lab5/task_5_2/book/Book.java ./lab5/task_5_2/book/comparator/BookPublisherComparator.java ./lab5/task_5_2/book/datagenerator/ProcessingDataGenerator.java ./lab5/task_5_2/book/initer/BookArrayIniter.java ./lab5/task_5_2/book/array/BookArrayView.java ./lab5/task_5_2/book/array/BookArrayModel.java ./lab5/task_5_2/book/array/FileBookStorage.java ./lab5/task_5_2/book/array/BookArrayController.java ./lab5/task_5_2/scanner/InputScanner.java ./lab5/task_5_2/menu/MenuStates.java ./lab5/task_5_2/menu/MenuView.java ./lab5/task_5_2/menu/MenuModel.java ./lab5/task_5_2/menu/MenuController.java ./lab5/task_5_2/Main.java
+
+      - name: Test
+        working-directory: ./java
+        run: |
+          javac -cp "./junit/junit-platform-console-standalone-1.9.0.jar" ./src/lab5/task_5_2/fs/FileObjectSystem.java ./src/lab5/task_5_2/tests/FileSystemTests.java
+          java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.task_5_2.tests.FileSystemTests
