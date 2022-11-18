@@ -2,7 +2,9 @@ package lab5.task_5_2.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
@@ -17,11 +19,11 @@ class FileSystemTests {
 		String object = "An object to read";
 		
 		FileObjectSystem fs = new FileObjectSystem();
-		Exception exception = assertThrows(IOException.class, () -> {
+		Exception exception = assertThrows(Exception.class, () -> {
 			fs.write(filepath, object);
 		});
 		
-		assertTrue(exception instanceof IOException);
+		assertTrue(exception instanceof FileNotFoundException);
 	}
 	
 	@Test
@@ -78,7 +80,19 @@ class FileSystemTests {
 			fs.read(filepath);
 		});
 		
-		assertTrue(exception instanceof IOException);
+		assertTrue(exception instanceof FileNotFoundException);
+	}
+	
+	@Test
+	void TestReadNotWrittenByFs() {
+		String filepath = "./test_files/5_2/not-fs.txt";
+		
+		FileObjectSystem fs = new FileObjectSystem();
+		Exception exception = assertThrows(Exception.class, () -> {
+			fs.read(filepath);
+		});
+		
+		assertTrue(exception instanceof StreamCorruptedException);
 	}
 
 }
