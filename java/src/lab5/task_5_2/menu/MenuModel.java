@@ -1,5 +1,7 @@
 package lab5.task_5_2.menu;
 
+import java.io.IOException;
+
 import lab5.task_5_2.book.array.BookArrayController;
 import lab5.task_5_2.book.datagenerator.ProcessingDataGenerator;
 import lab5.task_5_2.fs.FileObjectSystem;
@@ -30,8 +32,8 @@ public class MenuModel {
 		int state = MenuStates.STATUS_PROCESS_BOOKS;
 
 		switch (command) {
-		case MenuOptions.FIND_BY_PUBLISHER -> getBooksOfAuthor();
-		case MenuOptions.FIND_BY_AUTHOR -> getBooksOfPublisher();
+		case MenuOptions.FIND_BY_PUBLISHER -> getBooksOfPublisher();
+		case MenuOptions.FIND_BY_AUTHOR -> getBooksOfAuthor();
 		case MenuOptions.FIND_AFTER_YEAR -> getBooksAfterYear();
 		case MenuOptions.SORT_BY_PUBLISHER -> sortBooksByPublisher();
 		case MenuOptions.DEFAULT_STORAGE -> resetFileStorage();
@@ -66,13 +68,22 @@ public class MenuModel {
 		books.resetFileStorage();
 	}
 	
-	public void writeFile(String filepath) {
+	public void writeFile(String filepath) throws IOException {
 		Object storage = books.getFileStorage();
+		try {
+			fs.write(filepath, storage);
+		} catch (Exception exception) {
+			throw exception;
+		}
 		
 	}
 	
-	public void readFile(String filepath) {
-		//fs.read(filepath);
-		books.setFileStorage(null);
+	public void readFile(String filepath) throws Exception {
+		try {
+			Object storage = fs.read(filepath);
+		    books.setFileStorage(storage);
+		} catch (Exception exception) {
+			throw exception;
+		}
 	}
 }

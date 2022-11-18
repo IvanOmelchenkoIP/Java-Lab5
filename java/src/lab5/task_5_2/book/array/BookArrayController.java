@@ -27,8 +27,10 @@ public class BookArrayController {
 		return storage.getStorage();
 	}
 	
-	public void setFileStorage(ArrayList<Book> list) {
-		storage.setStorage(list);
+	public void setFileStorage(Object data) {
+		//ArrayList<Book> list = new ArrayList<Book>();
+		//list.add(...data);
+		//storage.setStorage(data);
 	}
 	
 	public void resetFileStorage() {
