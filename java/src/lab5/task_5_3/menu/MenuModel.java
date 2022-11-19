@@ -1,5 +1,7 @@
 package lab5.task_5_3.menu;
 
+import java.io.IOException;
+
 import lab5.task_5_3.fs.FileEncodeSystem;
 
 class MenuOptions {
@@ -29,6 +31,28 @@ public class MenuModel {
 		}
 		return status;
 	}
-	
-	
+
+	public void encodeData(String targetPath, String data) throws IOException {
+		try {
+			fs.encodeData(targetPath, data);
+		} catch (IOException exception) {
+			throw exception;
+		}
+	}
+
+	public void encodeFile(String targetPath, String encodePath) throws IOException {
+		try {
+			fs.encodeFile(targetPath, encodePath);
+		} catch (IOException exception) {
+			throw exception;
+		}
+	}
+
+	public void decodeFile(String targetPath, String decodePath) throws IOException {
+		try {
+			fs.decodeFile(targetPath, decodePath);
+		} catch (IOException exception) {
+			throw exception;
+		}
+	}
 }
