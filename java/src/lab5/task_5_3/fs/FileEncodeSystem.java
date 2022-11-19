@@ -3,15 +3,12 @@ package lab5.task_5_3.fs;
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.FilterInputStream;
 import java.io.FilterOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 
 import lab5.task_5_3.encoder.CharEncoder;
@@ -28,7 +25,6 @@ public class FileEncodeSystem {
 		FilterOutputStream stream = null;
 		try {
 			stream = new FilterOutputStream(new FileOutputStream(targetPath));
-
 			char[] dataChars = data.toCharArray();
 			for (char c : dataChars) {
 				stream.write((int) encoder.encode(c));
@@ -98,4 +94,5 @@ public class FileEncodeSystem {
 			}
 		}
 	}
+	
 }
