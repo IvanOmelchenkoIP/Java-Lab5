@@ -3,6 +3,7 @@ package lab5.task_5_4;
 import lab5.task_5_4.fs.FileUrlSystem;
 import lab5.task_5_4.menu.*;
 import lab5.task_5_4.scanner.InputScanner;
+import lab5.task_5_4.tags.*;
 
 public class Main {
 
@@ -15,7 +16,10 @@ public class Main {
 
 		InputScanner scanner = new InputScanner();
 		FileUrlSystem fs = new FileUrlSystem();
+		TagAnalyserModel tagModel = new TagAnalyserModel();
+		TagAnalyserView tagView = new TagAnalyserView();
+		TagAnalyserController tags = new TagAnalyserController(tagModel, tagView);
 
-		menu.launch(scanner, fs);
+		menu.launch(scanner, fs, tags);
 	}
 }

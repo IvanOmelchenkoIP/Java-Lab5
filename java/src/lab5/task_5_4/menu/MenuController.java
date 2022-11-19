@@ -2,6 +2,7 @@ package lab5.task_5_4.menu;
 
 import lab5.task_5_4.fs.FileUrlSystem;
 import lab5.task_5_4.scanner.InputScanner;
+import lab5.task_5_4.tags.TagAnalyserController;
 
 public class MenuController {
 
@@ -15,9 +16,9 @@ public class MenuController {
 		this.view = view;
 	}
 
-	public void launch(InputScanner scanner, FileUrlSystem fs) {
+	public void launch(InputScanner scanner, FileUrlSystem fs, TagAnalyserController tags) {
 		runFlag = true;
-		model.addControllers(fs);
+		model.addControllers(fs, tags);
 
 		while (runFlag) {
 			view.showMessage(MenuView.MENU);

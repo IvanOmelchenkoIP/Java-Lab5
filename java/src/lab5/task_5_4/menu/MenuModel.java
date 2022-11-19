@@ -1,9 +1,9 @@
 package lab5.task_5_4.menu;
 
-
 import java.io.IOException;
 
 import lab5.task_5_4.fs.FileUrlSystem;
+import lab5.task_5_4.tags.TagAnalyserController;
 
 class MenuOptions {
 
@@ -15,9 +15,11 @@ class MenuOptions {
 public class MenuModel {
 
 	FileUrlSystem fs;
+	TagAnalyserController tags;
 
-	public void addControllers(FileUrlSystem fs) {
+	public void addControllers(FileUrlSystem fs, TagAnalyserController tags) {
 		this.fs = fs;
+		this.tags = tags;
 	}
 
 	public int processCommand(String command) {
@@ -33,7 +35,9 @@ public class MenuModel {
 
 	public void tagsByAlphabet(String url) throws IOException {
 		try {
-			fs.read(url);
+			String html = fs.read(url);
+			tags.tagsByHtml(html);
+			tags.sortByAlphabet();
 		} catch (IOException exception) {
 			throw exception;
 		}
@@ -41,7 +45,9 @@ public class MenuModel {
 
 	public void tagsByOccurence(String url) throws IOException {
 		try {
-			fs.read(url);
+			String html = fs.read(url);
+			tags.tagsByHtml(html);
+			tags.sortByTags();
 		} catch (IOException exception) {
 			throw exception;
 		}
