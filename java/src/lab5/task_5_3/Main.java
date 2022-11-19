@@ -1,7 +1,7 @@
 package lab5.task_5_3;
 
 import lab5.task_5_3.menu.*;
-import lab5.task_5_3.encoder.ByteIncEncoder;
+import lab5.task_5_3.encoder.CharIncEncoder;
 import lab5.task_5_3.fs.FileEncodeSystem;
 import lab5.task_5_3.scanner.InputScanner;
 
@@ -13,7 +13,7 @@ public class Main {
 		MenuController menu = new MenuController(model, view);
 		
 		InputScanner scanner = new InputScanner();
-		ByteIncEncoder encoder = new ByteIncEncoder();
+		CharIncEncoder encoder = new CharIncEncoder();
 		FileEncodeSystem fs = new FileEncodeSystem(encoder);
 		
 		menu.launch(scanner, fs);
