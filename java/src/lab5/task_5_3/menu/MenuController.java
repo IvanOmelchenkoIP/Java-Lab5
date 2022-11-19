@@ -27,4 +27,27 @@ public class MenuController {
 		}
 		scanner.close();
 	}
+	
+	private void processCommmand(String input) {
+		int state = model.processCommand(input);
+		switch(state) {
+		case MenuStates.STATUS_INCORRECT_COMMAND -> view.showMessage(MenuView.COMMAND_ERROR);
+		case MenuStates.STATUS_EXIT -> runFlag = false;
+		case MenuStates.STATUS_ENCODE_DATA -> encodeData();
+		case MenuStates.STATUS_ENCODE_FILE -> encodeFile();
+		case MenuStates.STATUS_DECODE_FILE -> decodeFile();
+		}
+	}
+	
+	private void encodeData() {
+		
+	}
+	
+	private void encodeFile() {
+		
+	}
+	
+	private void decodeFile() {
+		
+	}
 }
