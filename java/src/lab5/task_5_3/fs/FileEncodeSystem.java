@@ -6,7 +6,7 @@ public class FileEncodeSystem {
 
 	ByteEncoder encoder;
 
-	FileEncodeSystem(ByteEncoder encoder) {
+	public FileEncodeSystem(ByteEncoder encoder) {
 		this.encoder = encoder;
 	}
 }
