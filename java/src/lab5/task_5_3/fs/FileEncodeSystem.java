@@ -1,10 +1,12 @@
 package lab5.task_5_3.fs;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.FilterInputStream;
 import java.io.FilterOutputStream;
 import java.io.IOException;
@@ -59,10 +61,10 @@ public class FileEncodeSystem {
 		FilterInputStream stream = null;
 		try {
 			stream = new BufferedInputStream(new FileInputStream(decodePath));
-			String data = null;
+			String data = "";
 			byte[] bytes = stream.readAllBytes();
 			for (byte b : bytes) {
-				data += encoder.decode((char) b);
+				data += (encoder.decode((char) b));
 			}
 			writeFile(targetPath, data);
 		} finally {
@@ -86,11 +88,10 @@ public class FileEncodeSystem {
 	}
 
 	private void writeFile(String filepath, String data) throws IOException {
-		DataOutputStream stream = null;
+		BufferedWriter stream = null;
 		try {
-			stream = new DataOutputStream(new FileOutputStream(filepath));
-			stream.writeChars(data);
-			;
+			stream = new BufferedWriter(new FileWriter(filepath));
+			stream.write(data);
 		} finally {
 			if (stream != null) {
 				stream.close();

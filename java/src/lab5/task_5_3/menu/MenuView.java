@@ -9,7 +9,7 @@ public class MenuView {
 	public final static String DECODED_FILE_INPUT_FIELD = "Enter a name of file to decode: ";
 	public final static String TARGET_FILE_INPUT_FIELD = "Enter a name of a file to save: ";
 	
-	public final static String OPERATION_SUCCESS = "Successfully complete...";
+	public final static String OPERATION_SUCCESS = "Successfully complete...\n\n";
 
 	public final static String COMMAND_ERROR = "Error! Invalid command!\n\n";
 
