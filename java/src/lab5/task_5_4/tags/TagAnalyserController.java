@@ -1,5 +1,7 @@
 package lab5.task_5_4.tags;
 
+import java.util.HashMap;
+
 public class TagAnalyserController {
 
 	TagAnalyserModel model;
@@ -10,15 +12,13 @@ public class TagAnalyserController {
 		this.view = view;
 	}
 
-	public void tagsByHtml(String html) {
-		model.tagsByHtml(html);
+	public void sortTagsByAlphabet(String html) {
+		HashMap<String, Integer> tags = model.sortTagsByAlphabet(html);
+		view.showSortedTags(tags, TagAnalyserView.SORTED_BY_ALPHABET, TagAnalyserView.EMPTY);
 	}
 
-	public void sortByAlphabet() {
-
-	}
-
-	public void sortByTags() {
-
+	public void sortTagsByOccurence(String html) {
+		HashMap<String, Integer> tags = model.sortTagsByOccurence(html);
+		view.showSortedTags(tags, TagAnalyserView.SORTED_BY_OCCURENCE, TagAnalyserView.EMPTY);
 	}
 }

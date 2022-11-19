@@ -36,8 +36,7 @@ public class MenuModel {
 	public void tagsByAlphabet(String url) throws IOException {
 		try {
 			String html = fs.read(url);
-			tags.tagsByHtml(html);
-			tags.sortByAlphabet();
+			tags.sortTagsByAlphabet(html);
 		} catch (IOException exception) {
 			throw exception;
 		}
@@ -46,8 +45,7 @@ public class MenuModel {
 	public void tagsByOccurence(String url) throws IOException {
 		try {
 			String html = fs.read(url);
-			tags.tagsByHtml(html);
-			tags.sortByTags();
+			tags.sortTagsByOccurence(html);
 		} catch (IOException exception) {
 			throw exception;
 		}
