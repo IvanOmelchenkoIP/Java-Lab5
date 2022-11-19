@@ -13,7 +13,6 @@ public class FileUrlSystem {
 			URL urlData = new URL(url);
 			stream = new DataInputStream(urlData.openStream());
 			String contents = new String(stream.readAllBytes(), StandardCharsets.UTF_8);
-			System.out.println(contents);
 			return contents;
 		} finally {
 			if (stream != null) {

@@ -11,7 +11,7 @@ public class TagAnalyserController {
 	}
 
 	public void tagsByHtml(String html) {
-
+		model.tagsByHtml(html);
 	}
 
 	public void sortByAlphabet() {
