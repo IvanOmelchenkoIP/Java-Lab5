@@ -6,6 +6,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 import lab5.task_5_4.tags.comparators.MapKeyComparator;
 import lab5.task_5_4.tags.comparators.MapValueComparator;
@@ -26,7 +28,7 @@ public class TagAnalyserModel {
 
 	private HashMap<String, Integer> sortHashMap(HashMap<String, Integer> map,
 			Comparator<Map.Entry<String, Integer>> comparator) {
-		ArrayList<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(tags.entrySet());
+		ArrayList<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(map.entrySet());
 		Collections.sort(list, comparator);
 
 		LinkedHashMap<String, Integer> sorted = new LinkedHashMap<String, Integer>();
@@ -58,8 +60,13 @@ public class TagAnalyserModel {
 	}
 
 	private boolean isTag(String tag) {
-		return (tag.contains("\\") || tag.contains("/") || tag.contains("-") || tag == "" || tag.contains("=")) ? false
-				: true;
+		Pattern pattern = Pattern.compile("\\W");
+		Matcher matcher = pattern.matcher(tag);
+		if (tag == "" || matcher.find()) {
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 }
