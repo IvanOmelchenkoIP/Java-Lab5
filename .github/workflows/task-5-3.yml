@@ -21,7 +21,7 @@ jobs:
 
       - name: Build
         working-directory: ./java/src
-        run: javac ./lab5/task_5_3/CharEncoder.java ./lab5/task_5_3/CharIncEncoder.java ./lab5/task_5_3/fs/FileEncodeSystem.java ./lab5/task_5_3/scanner/InputScanner.java ./lab5/task_5_3/menu/MenuStates.java ./lab5/task_5_3/menu/MenuView.java ./lab5/task_5_3/menu/MenuModel.java ./lab5/task_5_3/menu/MenuController.java ./lab5/task_5_3/Main.java
+        run: javac ./lab5/task_5_3/encoder/CharEncoder.java ./lab5/task_5_3/encoder/CharIncEncoder.java ./lab5/task_5_3/fs/FileEncodeSystem.java ./lab5/task_5_3/scanner/InputScanner.java ./lab5/task_5_3/menu/MenuStates.java ./lab5/task_5_3/menu/MenuView.java ./lab5/task_5_3/menu/MenuModel.java ./lab5/task_5_3/menu/MenuController.java ./lab5/task_5_3/Main.java
 
       - name: Test
         working-directory: ./java

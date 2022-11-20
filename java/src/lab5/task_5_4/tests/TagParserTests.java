@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 import org.junit.jupiter.api.Test;
 
-import lab5.task_5_4.tags.TagsParser;
+import lab5.task_5_4.tags.TagParser;
 
 class TagParserTests {
 
@@ -15,7 +15,7 @@ class TagParserTests {
 		HashMap<String, Integer> expected = new HashMap<String, Integer>();
 
 		String html = "";
-		TagsParser parser = new TagsParser();
+		TagParser parser = new TagParser();
 		HashMap<String, Integer> result = parser.getTagsOccurenceFromHtml(html);
 
 		assertTrue(expected.equals(result));
@@ -26,7 +26,7 @@ class TagParserTests {
 		HashMap<String, Integer> expected = new HashMap<String, Integer>();
 
 		String html = "some data";
-		TagsParser parser = new TagsParser();
+		TagParser parser = new TagParser();
 		HashMap<String, Integer> result = parser.getTagsOccurenceFromHtml(html);
 
 		assertTrue(expected.equals(result));
@@ -40,7 +40,7 @@ class TagParserTests {
 		expected.put("p", 1);
 
 		String html = "<p> Paragraph </p>\n<h1>head1</h1><h1>head2</h1><a href = \"\"></a>";
-		TagsParser parser = new TagsParser();
+		TagParser parser = new TagParser();
 		HashMap<String, Integer> result = parser.getTagsOccurenceFromHtml(html);
 
 		assertTrue(expected.equals(result));

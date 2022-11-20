@@ -6,9 +6,9 @@ public class TagAnalyserController {
 
 	private TagAnalyserModel model;
 	private TagAnalyserView view;
-	private TagsParser parser;
+	private TagParser parser;
 
-	public TagAnalyserController(TagAnalyserModel model, TagAnalyserView view, TagsParser parser) {
+	public TagAnalyserController(TagAnalyserModel model, TagAnalyserView view, TagParser parser) {
 		this.model = model;
 		this.view = view;
 		this.parser = parser;
