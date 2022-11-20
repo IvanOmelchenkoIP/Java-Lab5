@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import lab5.task_5_4.tags.TagsParser;
 
-class TestParseHtmlTags {
+class TagParserTests {
 
 	@Test
 	void TestParserEmptyHtml() {

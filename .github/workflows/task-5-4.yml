@@ -1,0 +1,32 @@
+name: Build and Test Task 4
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setupup Java JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
+
+      - name: Build
+        working-directory: ./java/src
+        run: javac ./lab5/task_5_4/fs/FileUrlSystem.java ./lab5/task_5_4/tags/comparators/MapKeyComparator.java ./lab5/task_5_4/tags/comparators/MapValueComparator.java ./lab5/task_5_4/tags/TagParser.java ./lab5/task_5_4/tags/TagAnalyserView.java ./lab5/task_5_4/tags/TagAnalyserModel.java ./lab5/task_5_4/tags/TagAnalyserController.java ./lab5/task_5_4/scanner/InputScanner.java ./lab5/task_5_4/menu/MenuStates.java ./lab5/task_5_4/menu/MenuView.java ./lab5/task_5_4/menu/MenuModel.java ./lab5/task_5_4/menu/MenuController.java ./lab5/task_5_4/Main.java
+
+      - name: Test
+        working-directory: ./java
+        run: |
+          javac -cp "./junit/junit-platform-console-standalone-1.9.0.jar" ./lab5/task_5_4/tags/TagParser.java ./src/lab5/task_5_4/tests/TagParserTests.java
+          java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.task_5_4.tests.TagParserTests          
+          javac -cp "./junit/junit-platform-console-standalone-1.9.0.jar" ./lab5/task_5_4/tags/comparators/MapKeyComparator.java ./lab5/task_5_4/tags/comparators/MapValueComparator.java ./lab5/task_5_4/tags/TagAnalyserModel.java ./src/lab5/task_5_4/tests/TagsSortTests.java
+          java -jar ./junit/junit-platform-console-standalone-1.9.0.jar -cp "./src" --select-class lab5.task_5_4.tests.TagsSortTests

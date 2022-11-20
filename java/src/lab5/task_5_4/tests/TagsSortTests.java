@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import lab5.task_5_4.tags.TagAnalyserModel;
 
-class TestTagsSort {
+class TagsSortTests {
 
 	@Test
 	void TestSortByAlphabetEmpty() {
