@@ -4,21 +4,25 @@ import java.util.HashMap;
 
 public class TagAnalyserController {
 
-	TagAnalyserModel model;
-	TagAnalyserView view;
+	private TagAnalyserModel model;
+	private TagAnalyserView view;
+	private TagsParser parser;
 
-	public TagAnalyserController(TagAnalyserModel model, TagAnalyserView view) {
+	public TagAnalyserController(TagAnalyserModel model, TagAnalyserView view, TagsParser parser) {
 		this.model = model;
 		this.view = view;
+		this.parser = parser;
 	}
 
 	public void sortTagsByAlphabet(String html) {
-		HashMap<String, Integer> tags = model.sortTagsByAlphabet(html);
-		view.showSortedTags(tags, TagAnalyserView.SORTED_BY_ALPHABET, TagAnalyserView.EMPTY);
+		HashMap<String, Integer> tags = parser.getTagsOccurenceFromHtml(html);
+		HashMap<String, Integer> sorted = model.sortTagsByAlphabet(tags);
+		view.showSortedTags(sorted, TagAnalyserView.SORTED_BY_ALPHABET, TagAnalyserView.EMPTY);
 	}
 
 	public void sortTagsByOccurence(String html) {
-		HashMap<String, Integer> tags = model.sortTagsByOccurence(html);
-		view.showSortedTags(tags, TagAnalyserView.SORTED_BY_OCCURENCE, TagAnalyserView.EMPTY);
+		HashMap<String, Integer> tags = parser.getTagsOccurenceFromHtml(html);
+		HashMap<String, Integer> sorted = model.sortTagsByOccurence(tags);
+		view.showSortedTags(sorted, TagAnalyserView.SORTED_BY_OCCURENCE, TagAnalyserView.EMPTY);
 	}
 }

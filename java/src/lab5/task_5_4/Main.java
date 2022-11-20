@@ -18,7 +18,8 @@ public class Main {
 		FileUrlSystem fs = new FileUrlSystem();
 		TagAnalyserModel tagModel = new TagAnalyserModel();
 		TagAnalyserView tagView = new TagAnalyserView();
-		TagAnalyserController tags = new TagAnalyserController(tagModel, tagView);
+		TagsParser parser = new TagsParser();
+		TagAnalyserController tags = new TagAnalyserController(tagModel, tagView, parser);
 
 		menu.launch(scanner, fs, tags);
 	}
