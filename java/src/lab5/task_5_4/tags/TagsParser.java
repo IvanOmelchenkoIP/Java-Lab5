@@ -7,8 +7,13 @@ import java.util.regex.Pattern;
 public class TagsParser {
 
 	public HashMap<String, Integer> getTagsOccurenceFromHtml(String html) {
+		
+		if (!isHtml(html)) {
+			return new HashMap<String, Integer>();
+		} 
+		
 		HashMap<String, Integer> tags = new HashMap<String, Integer>();
-
+		
 		String[] htmlLines = html.replaceAll("\n", "").split("<");
 		for (String line : htmlLines) {
 			String tag = findTag(line);
@@ -17,6 +22,16 @@ public class TagsParser {
 			}
 		}
 		return tags;
+	}
+	
+	private boolean isHtml(String html) {
+		Pattern pattern = Pattern.compile("</?[\\w]+>");
+		Matcher matcher = pattern.matcher(html);
+		if (matcher.find()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	private String findTag(String line) {
