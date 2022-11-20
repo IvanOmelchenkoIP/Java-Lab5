@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import lab5.task_5_4.tags.comparators.MapKeyComparator;
@@ -17,7 +18,7 @@ public class TagAnalyserModel {
 		ArrayList<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(tags.entrySet());
 		Collections.sort(list, comparator);
 
-		HashMap<String, Integer> sorted = new HashMap<String, Integer>();
+		LinkedHashMap<String, Integer> sorted = new LinkedHashMap<String, Integer>();
 		for (Map.Entry<String, Integer> entry : list) {
 			sorted.put(entry.getKey(), entry.getValue());
 		}
@@ -30,7 +31,7 @@ public class TagAnalyserModel {
 		ArrayList<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(tags.entrySet());
 		Collections.sort(list, comparator);
 
-		HashMap<String, Integer> sorted = new HashMap<String, Integer>();
+		LinkedHashMap<String, Integer> sorted = new LinkedHashMap<String, Integer>();
 		for (Map.Entry<String, Integer> entry : list) {
 			sorted.put(entry.getKey(), entry.getValue());
 		}
@@ -59,8 +60,7 @@ public class TagAnalyserModel {
 	}
 
 	private boolean isTag(String tag) {
-		return (tag.contains("\\") || tag.contains("/") || tag.contains("-") || tag == "" || tag.contains("=")) 
-				? false
+		return (tag.contains("\\") || tag.contains("/") || tag.contains("-") || tag == "" || tag.contains("=")) ? false
 				: true;
 	}
 
