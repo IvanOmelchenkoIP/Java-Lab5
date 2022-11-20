@@ -15,19 +15,17 @@ public class TagAnalyserModel {
 	public HashMap<String, Integer> sortTagsByAlphabet(String html) {
 		HashMap<String, Integer> tags = getTagsFromHtml(html);
 		Comparator<Map.Entry<String, Integer>> comparator = new MapKeyComparator();
-		ArrayList<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(tags.entrySet());
-		Collections.sort(list, comparator);
-
-		LinkedHashMap<String, Integer> sorted = new LinkedHashMap<String, Integer>();
-		for (Map.Entry<String, Integer> entry : list) {
-			sorted.put(entry.getKey(), entry.getValue());
-		}
-		return sorted;
+		return sortHashMap(tags, comparator);
 	}
 
 	public HashMap<String, Integer> sortTagsByOccurence(String html) {
 		HashMap<String, Integer> tags = getTagsFromHtml(html);
 		Comparator<Map.Entry<String, Integer>> comparator = new MapValueComparator();
+		return sortHashMap(tags, comparator);
+	}
+
+	private HashMap<String, Integer> sortHashMap(HashMap<String, Integer> map,
+			Comparator<Map.Entry<String, Integer>> comparator) {
 		ArrayList<Map.Entry<String, Integer>> list = new ArrayList<Map.Entry<String, Integer>>(tags.entrySet());
 		Collections.sort(list, comparator);
 
